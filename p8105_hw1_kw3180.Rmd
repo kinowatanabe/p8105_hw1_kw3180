@@ -5,12 +5,26 @@ data: 2025-09-18
 output: github_document
 ---
 
+# Problem 1
+
 ```{r}
 library(moderndive)
+library(tidyverse)
 ```
 
-
+## Importing and looking at data set
 ```{r}
 data("early_january_weather")
 ```
+
+There are `r nrow(early_january_weather)` rows and `r ncol(early_january_weather)` columns. The variables in the dataset are: origin, year, month, day, hour, temp, dewp, humid, wind_dir, wind_speed, wind_gust, precip, pressure, visib, and time_hour. The mean is `r mean(pull(early_january_weather, temp))`.
+
+## Scatterplot
+
+```{r}
+ggplot(early_january_weather, aes(x = time_hour, y = temp, color = humid)) + geom_point()
+```
+
+The temperature fluctuated throughout the day, but there is an upward trend in general. As time passed in January, the temperature increased. The humidity seemed to increase throughout the month.
+
 
