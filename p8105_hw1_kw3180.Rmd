@@ -48,6 +48,8 @@ p2_df = tibble(
   factor_vec = factor(rep(c("level1","level2","level3"), length.out = 10),
         levels = c("level1","level2","level3"))
 )
+
+p2_df
 ```
 ## Creating means
 ```{r}
