@@ -25,8 +25,8 @@ data("early_january_weather")
 ggplot(early_january_weather, aes(x = time_hour, y = temp, color = humid)) + geom_point() +
     labs(
     title = "Temperature vs. Time",
-    x = "Time (hourly)",
-    y = "Temperature",
+    x = "time_hour",
+    y = "temp (F)",
     color = "Humidity"
   )
 
@@ -73,5 +73,3 @@ as.numeric(pull(p2_df, factor_vec))
 * We couldn't find the mean for a character vector of length 10 because it is a character variable. When we try to convert it as a numeric variable with as.numeric, R cannot process it and returns "NA." This helps explain why we can't find the mean of the character vectors.
 
 * When we try to find the mean for a factor vector of length 10, with 3 different factor “levels,” we cannot do it because it is a ordinal categorical variable. Despite this, the as.numeric function gives the levels as integer codes (in order of the respective levels). This may be confusing, but the as.numeric warning helps explain the discrepancy: as.numeric will return the underlying numeric (integer) representation. Even if we took the mean for these factors, it would be meaningless because the numbers are arbitrary labels. 
-
-
